@@ -19,8 +19,8 @@ export default function NoteList() {
     loadNotes();
   }, [loadNotes]);
 
-  async function handleAdd(title: string, body: string, employee: Employee) {
-    await createNote(title, body, employee);
+  async function handleAdd(body: string, employee: Employee) {
+    await createNote(body, employee);
     await loadNotes();
   }
 
@@ -29,8 +29,8 @@ export default function NoteList() {
     await loadNotes();
   }
 
-  async function handleEdit(id: number, title: string, body: string, employee: Employee) {
-    await updateNote(id, { title, body, employee });
+  async function handleEdit(id: number, body: string, employee: Employee) {
+    await updateNote(id, { body, employee });
     await loadNotes();
   }
 

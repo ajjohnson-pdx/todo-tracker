@@ -10,11 +10,11 @@ export async function fetchNotes(employee?: Employee): Promise<Note[]> {
   return res.json();
 }
 
-export async function createNote(title: string, body: string, employee: Employee): Promise<Note> {
+export async function createNote(body: string, employee: Employee): Promise<Note> {
   const res = await fetch(`${BASE}/notes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ title, body, employee }),
+    body: JSON.stringify({ body, employee }),
   });
   if (!res.ok) throw new Error("Failed to create note");
   return res.json();
@@ -22,7 +22,7 @@ export async function createNote(title: string, body: string, employee: Employee
 
 export async function updateNote(
   id: number,
-  data: { title?: string; body?: string; employee?: Employee }
+  data: { body?: string; employee?: Employee }
 ): Promise<Note> {
   const res = await fetch(`${BASE}/notes/${id}`, {
     method: "PATCH",

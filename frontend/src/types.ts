@@ -14,7 +14,6 @@ export interface Task {
 
 export interface Note {
   id: number;
-  title: string;
   body: string;
   employee: Employee;
   created_at: string;

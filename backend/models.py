@@ -28,7 +28,6 @@ class Note(Base):
     __tablename__ = "notes"
 
     id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
-    title: Mapped[str] = mapped_column(String(500), nullable=False)
     body: Mapped[str] = mapped_column(Text, nullable=False)
     employee: Mapped[str] = mapped_column(
         Enum(*EMPLOYEES, name="employee_enum"), nullable=False

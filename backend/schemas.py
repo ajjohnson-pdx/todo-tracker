@@ -35,20 +35,17 @@ class TaskResponse(BaseModel):
 # --- Note schemas ---
 
 class NoteCreate(BaseModel):
-    title: str
     body: str
     employee: EmployeeName
 
 
 class NoteUpdate(BaseModel):
-    title: Optional[str] = None
     body: Optional[str] = None
     employee: Optional[EmployeeName] = None
 
 
 class NoteResponse(BaseModel):
     id: int
-    title: str
     body: str
     employee: str
     created_at: datetime
